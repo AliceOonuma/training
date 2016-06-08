@@ -4,7 +4,6 @@ public class UserId {
 	private int value;
 
 	public UserId() {
-		// TODO 自動生成されたコンストラクター・スタブ
 	}
 
 	public UserId(int value) {

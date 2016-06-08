@@ -6,7 +6,6 @@ public class Name {
 
 	public Name() {
 		value = "";
-		// TODO 自動生成されたコンストラクター・スタブ
 	}
 
 	public Name(String value) {

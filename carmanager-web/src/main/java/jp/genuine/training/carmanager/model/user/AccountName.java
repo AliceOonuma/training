@@ -6,7 +6,6 @@ public class AccountName {
 
 	public AccountName() {
 		value = "";
-		// TODO 自動生成されたコンストラクター・スタブ
 	}
 
 	public AccountName(String value) {

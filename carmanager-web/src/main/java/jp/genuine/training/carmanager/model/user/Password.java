@@ -6,7 +6,6 @@ public class Password {
 
 	public Password() {
 		value = "";
-		// TODO 自動生成されたコンストラクター・スタブ
 	}
 
 	public Password(String value) {
