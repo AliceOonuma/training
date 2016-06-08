@@ -2,25 +2,53 @@ package jp.genuine.training.carmanager.model.user;
 
 public class User {
 
-	private String value;
+	private UserId userId;
+	private Password password;
+	private AccountName accountName;
+	private Name name;
 
 	public User() {
-		value ="";
 	}
 
-	public User(String value) {
+	public User(UserId userId, Password password, AccountName accountName, Name name) {
 		super();
-		this.value = value;
+		this.userId = userId;
+		this.password = password;
+		this.accountName = accountName;
+		this.name = name;
 	}
 
-	public String getValue() {
-		return value;
+	public UserId getUserId() {
+		return userId;
 	}
 
-	public void setValue(String value) {
-		this.value = value;
+	public Password getPassword() {
+		return password;
 	}
 
+	public AccountName getAccountName() {
+		return accountName;
+	}
+
+	public Name getName() {
+		return name;
+	}
+
+	public void setUserId(UserId userId) {
+		this.userId = userId;
+	}
+
+	public void setPassword(Password password) {
+		this.password = password;
+	}
+
+	public void setAccountName(AccountName accountName) {
+		this.accountName = accountName;
+	}
+
+	public void setName(Name name) {
+		this.name = name;
+	}
 
 
 }
