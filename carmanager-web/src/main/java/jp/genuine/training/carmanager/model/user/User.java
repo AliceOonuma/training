@@ -54,5 +54,11 @@ public class User {
 		this.name = name;
 	}
 
+	@Override
+	public String toString() {
+		return String.format("User [userId=%s, password=%s, accountName=%s, name=%s]", userId, password, accountName,
+				name);
+	}
+
 
 }
