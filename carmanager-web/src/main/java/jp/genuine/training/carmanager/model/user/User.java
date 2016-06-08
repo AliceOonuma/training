@@ -8,6 +8,10 @@ public class User {
 	private Name name;
 
 	public User() {
+		userId = new UserId();
+		password = new Password();
+		accountName = new AccountName();
+		name = new Name();
 	}
 
 	public User(UserId userId, Password password, AccountName accountName, Name name) {
