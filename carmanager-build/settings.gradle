@@ -1,0 +1,3 @@
+rootProject.name = 'carmanager'
+
+includeFlat 'carmanager-web'
