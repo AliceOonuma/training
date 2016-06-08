@@ -1,4 +1,4 @@
-package jp.genuine.training.carmanager.sample;
+package jp.genuine.training.carmanager.model.sample;
 
 public interface SampleRepository {
 

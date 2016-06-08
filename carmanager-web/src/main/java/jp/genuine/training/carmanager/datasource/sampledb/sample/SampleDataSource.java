@@ -3,7 +3,7 @@ package jp.genuine.training.carmanager.datasource.sampledb.sample;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import jp.genuine.training.carmanager.sample.SampleRepository;
+import jp.genuine.training.carmanager.model.sample.SampleRepository;
 
 @Repository
 public class SampleDataSource implements SampleRepository
