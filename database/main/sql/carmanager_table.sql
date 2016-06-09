@@ -1,13 +1,14 @@
 CREATE SCHEMA carmanager;
+CREATE SCHEMA user
 
 CREATE SEQUENCE carmanager.user_id;
 CREATE SEQUENCE carmanager.car_id;
 CREATE SEQUENCE carmanager.oiling_id;
 
-CREATE TABLE carmanager.user
+CREATE TABLE user.user
 (
 
-user_id integer NOT NULL PRIMARY KEY default nextval('carmanager.user_id'),
+user_id integer NOT NULL PRIMARY KEY nextval('carmanager.user_id'),
 user_name character varying(10) NOT NULL,
 account_name character varying(20) UNIQUE NOT NULL,
 password character varying(20) NOT NULL,
@@ -27,7 +28,7 @@ created_at timestamp NOT NULL
 CREATE TABLE carmanager.car
 (
 
-car_id integer NOT NULL PRIMARY KEY default nextval('carmanager.car_id'),
+car_id integer NOT NULL PRIMARY KEY nextval('carmanager.car_id'),
 user_id integer NOT NULL,
 car_name character varying(10) NOT NULL,
 gasoline_type character varying(10) NOT NULL,
@@ -54,7 +55,7 @@ FOREIGN KEY (car_id) REFERENCES carmanager.car(car_id)
 CREATE TABLE carmanager.oiling
 (
 
-oiling_id integer NOT NULL PRIMARY KEY default nextval('carmanager.oiling_id'),
+oiling_id integer NOT NULL PRIMARY KEY nextval('carmanager.oiling_id'),
 car_id integer NOT NULL,
 oiling_day date NOT NULL,
 updated_at timestamp NOT NULL,
