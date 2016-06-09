@@ -1,5 +1,7 @@
 CREATE SCHEMA carmanager;
 CREATE SCHEMA account;
+CREATE SCHEMA car;
+CREATE SCHEMA oiling;
 
 CREATE SEQUENCE account.user_id;
 CREATE SEQUENCE carmanager.car_id;
@@ -25,7 +27,7 @@ created_at timestamp NOT NULL
 
 );
 
-CREATE TABLE carmanager.car
+CREATE TABLE car.car
 (
 
 car_id integer NOT NULL PRIMARY KEY,
@@ -48,11 +50,11 @@ odometer integer NOT NULL,
 gasoline_quantity integer NOT NULL,
 created_at timestamp NOT NULL,
 
-FOREIGN KEY (car_id) REFERENCES carmanager.car(car_id)
+FOREIGN KEY (car_id) REFERENCES car.car(car_id)
 
 );
 
-CREATE TABLE carmanager.oiling
+CREATE TABLE oiling.oiling
 (
 
 oiling_id integer NOT NULL PRIMARY KEY,
@@ -60,7 +62,7 @@ car_id integer NOT NULL,
 oiling_day date NOT NULL,
 updated_at timestamp NOT NULL,
 
-FOREIGN KEY (car_id) REFERENCES carmanager.car(car_id)
+FOREIGN KEY (car_id) REFERENCES car.car(car_id)
 
 );
 
@@ -74,6 +76,6 @@ odometer integer NOT NULL,
 gasoline_price integer NOT NULL,
 updated_at timestamp NOT NULL,
 
-FOREIGN KEY (oiling_id) REFERENCES carmanager.oiling(oiling_id)
+FOREIGN KEY (oiling_id) REFERENCES oiling.oiling(oiling_id)
 
 );
