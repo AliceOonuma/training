@@ -35,7 +35,7 @@ gasoline_type character varying(10) NOT NULL,
 gasolinetank_capacity integer NOT NULL,
 updated_at timestamp NOT NULL,
 
-FOREIGN KEY (user_id) REFERENCES carmanager.user(user_id),
+FOREIGN KEY (user_id) REFERENCES account.user(user_id),
 FOREIGN KEY (gasoline_type) REFERENCES carmanager.gasoline_type(gasoline_type)
 
 );
