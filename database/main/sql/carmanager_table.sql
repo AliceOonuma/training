@@ -1,11 +1,10 @@
-CREATE SCHEMA carmanager;
 CREATE SCHEMA account;
 CREATE SCHEMA car;
 CREATE SCHEMA oiling;
 
 CREATE SEQUENCE account.user_id;
-CREATE SEQUENCE carmanager.car_id;
-CREATE SEQUENCE carmanager.oiling_id;
+CREATE SEQUENCE car.car_id;
+CREATE SEQUENCE oiling.oiling_id;
 
 CREATE TABLE account.user
 (
@@ -18,7 +17,7 @@ updated_at timestamp NOT NULL
 
 );
 
-CREATE TABLE carmanager.gasoline_type
+CREATE TABLE car.gasoline_type
 (
 
 gasoline_type character varying(10) NOT NULL PRIMARY KEY,
@@ -38,11 +37,11 @@ gasolinetank_capacity integer NOT NULL,
 updated_at timestamp NOT NULL,
 
 FOREIGN KEY (user_id) REFERENCES account.user(user_id),
-FOREIGN KEY (gasoline_type) REFERENCES carmanager.gasoline_type(gasoline_type)
+FOREIGN KEY (gasoline_type) REFERENCES car.gasoline_type(gasoline_type)
 
 );
 
-CREATE TABLE carmanager.initial_car_status
+CREATE TABLE car.initial_car_status
 (
 
 car_id integer NOT NULL PRIMARY KEY,
@@ -66,7 +65,7 @@ FOREIGN KEY (car_id) REFERENCES car.car(car_id)
 
 );
 
-CREATE TABLE carmanager.oiling_detail
+CREATE TABLE oiling.oiling_detail
 (
 
 oiling_id integer NOT NULL PRIMARY KEY,
