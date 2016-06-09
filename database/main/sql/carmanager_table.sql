@@ -8,7 +8,7 @@ CREATE SEQUENCE carmanager.oiling_id;
 CREATE TABLE account.user
 (
 
-user_id integer NOT NULL PRIMARY,
+user_id integer NOT NULL PRIMARY KEY,
 user_name character varying(10) NOT NULL,
 account_name character varying(20) UNIQUE NOT NULL,
 password character varying(20) NOT NULL,
