@@ -1,7 +1,6 @@
 package jp.genuine.training.carmanager.model.oiling;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 
 import jp.genuine.training.carmanager.model.car.CarId;
 
@@ -9,7 +8,7 @@ public class Oiling implements Serializable{
 
 	private OilingId oilingId;
 	private CarId carId;
-	private LocalDate oilingDate;
+	private OilingDate oilingDate;
 	private GasolinePrice gasolinePrice;
 	private GasolineQuantity gasolineQuantity;
 	private OilingQuantity oilingQuantity;
@@ -18,14 +17,14 @@ public class Oiling implements Serializable{
 	public Oiling() {
 		oilingId = new OilingId();
 		carId = new CarId();
-		oilingDate = LocalDate.now();
+		oilingDate = new OilingDate();
 		gasolinePrice = new GasolinePrice();
 		gasolineQuantity = new GasolineQuantity();
 		oilingQuantity = new OilingQuantity();
 		memo = new Memo();
 	}
 
-	public Oiling(OilingId oilingId, CarId carId, LocalDate oilingDate, GasolinePrice gasolinePrice,
+	public Oiling(OilingId oilingId, CarId carId, OilingDate oilingDate, GasolinePrice gasolinePrice,
 			GasolineQuantity gasolineQuantity, Memo memo, OilingQuantity oilingQuantity) {
 		super();
 		this.oilingId = oilingId;
@@ -45,7 +44,7 @@ public class Oiling implements Serializable{
 		return carId;
 	}
 
-	public LocalDate getOilingDate() {
+	public OilingDate getOilingDate() {
 		return oilingDate;
 	}
 
@@ -73,7 +72,7 @@ public class Oiling implements Serializable{
 		this.carId = carId;
 	}
 
-	public void setOilingDate(LocalDate oilingDate) {
+	public void setOilingDate(OilingDate oilingDate) {
 		this.oilingDate = oilingDate;
 	}
 
