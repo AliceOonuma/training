@@ -1,6 +1,8 @@
 package jp.genuine.training.carmanager.model.gasolinecalculation;
 
-public class GasolineCalculation {
+import java.io.Serializable;
+
+public class GasolineCalculation implements Serializable{
 
 	private FuelConsumption fuelConsumption;
 	private GasolinePrice gasolinePrice;
@@ -50,4 +52,5 @@ public class GasolineCalculation {
 	}
 
 
+	private static final long serialVersionUID = -3185790119657378590L;
 }

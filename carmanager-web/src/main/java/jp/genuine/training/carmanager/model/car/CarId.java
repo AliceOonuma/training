@@ -1,8 +1,10 @@
 package jp.genuine.training.carmanager.model.car;
 
-public class CarId {
+import java.io.Serializable;
 
-	private int value;
+public class CarId implements Serializable{
+
+	private Integer value;
 
 	public CarId() {
 	}
@@ -26,5 +28,6 @@ public class CarId {
 	}
 
 
+	private static final long serialVersionUID = -6263190783339380911L;
 
 }

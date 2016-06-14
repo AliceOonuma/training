@@ -1,8 +1,10 @@
 package jp.genuine.training.carmanager.model.gasolinecalculation;
 
-public class FuelConsumption {
+import java.io.Serializable;
 
-	private int value;
+public class FuelConsumption implements Serializable{
+
+	private Integer value;
 
 	public FuelConsumption() {
 	}
@@ -26,5 +28,6 @@ public class FuelConsumption {
 	}
 
 
+	private static final long serialVersionUID = 4180544911151393210L;
 
 }

@@ -1,6 +1,9 @@
 package jp.genuine.training.carmanager.model.car;
 
-public class Car {
+import java.io.Serializable;
+
+public class Car implements Serializable{
+
 
 	private CarId carId;
 	private CarName carName;
@@ -72,6 +75,6 @@ public class Car {
 				carName, gasolineTankCapacity, gasolineType, memo);
 	}
 
-
+	private static final long serialVersionUID = -4838726199260167800L;
 
 }

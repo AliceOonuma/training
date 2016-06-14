@@ -1,9 +1,11 @@
 package jp.genuine.training.carmanager.model.car.summary;
 
+import java.io.Serializable;
+
 import jp.genuine.training.carmanager.model.car.CarId;
 import jp.genuine.training.carmanager.model.car.CarName;
 
-public class CarSummary {
+public class CarSummary implements Serializable{
 
 	private CarId carId;
 	private CarName carName;
@@ -40,4 +42,5 @@ public class CarSummary {
 		return String.format("CarSummary [carId=%s, carName=%s]", carId, carName);
 	}
 
+	private static final long serialVersionUID = -3733757583005320401L;
 }

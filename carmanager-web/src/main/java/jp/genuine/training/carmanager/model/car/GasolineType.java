@@ -1,6 +1,8 @@
 package jp.genuine.training.carmanager.model.car;
 
-public class GasolineType {
+import java.io.Serializable;
+
+public class GasolineType implements Serializable{
 
 	private String value;
 
@@ -27,5 +29,6 @@ public class GasolineType {
 	}
 
 
+	private static final long serialVersionUID = 966601351765188288L;
 
 }

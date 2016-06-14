@@ -1,6 +1,8 @@
 package jp.genuine.training.carmanager.model.oiling;
 
-public class Memo {
+import java.io.Serializable;
+
+public class Memo implements Serializable{
 
 	private String value;
 
@@ -27,5 +29,6 @@ public class Memo {
 	}
 
 
+	private static final long serialVersionUID = 6580005318818936839L;
 
 }

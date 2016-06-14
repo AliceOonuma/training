@@ -1,8 +1,10 @@
 package jp.genuine.training.carmanager.model.car.initialstatus;
 
-public class InitialOdometer {
+import java.io.Serializable;
 
-	private int value;
+public class InitialOdometer implements Serializable{
+
+	private Integer value;
 
 	public InitialOdometer() {
 	}
@@ -25,6 +27,6 @@ public class InitialOdometer {
 		return String.format("InitialOdometer [value=%s]", value);
 	}
 
-
+	private static final long serialVersionUID = 1591490440919229297L;
 
 }

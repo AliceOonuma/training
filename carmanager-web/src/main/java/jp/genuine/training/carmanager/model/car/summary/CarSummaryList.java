@@ -1,33 +1,34 @@
 package jp.genuine.training.carmanager.model.car.summary;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CarSummaryList {
+public class CarSummaryList implements Serializable{
 
-	private List<CarSummary> carSummaryList;
+	private List<CarSummary> list;
 
 	public CarSummaryList() {
-		carSummaryList = new ArrayList<CarSummary>();
+		list = new ArrayList<CarSummary>();
 	}
 
 	public CarSummaryList(List<CarSummary> carSummaryList) {
 		super();
-		this.carSummaryList = carSummaryList;
+		this.list = carSummaryList;
 	}
 
 	public List<CarSummary> getValue() {
-		return carSummaryList;
+		return list;
 	}
 
 	public void setValue(List<CarSummary> carSummaryList) {
-		this.carSummaryList = carSummaryList;
+		this.list = carSummaryList;
 	}
 
 	@Override
 	public String toString() {
-		return String.format("CarSummaryList [carSummaryList=%s]", carSummaryList);
+		return String.format("CarSummaryList [list=%s]", list);
 	}
 
-
+	private static final long serialVersionUID = -8086179119010752298L;
 }

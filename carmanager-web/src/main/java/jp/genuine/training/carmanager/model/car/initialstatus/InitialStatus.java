@@ -1,8 +1,10 @@
 package jp.genuine.training.carmanager.model.car.initialstatus;
 
+import java.io.Serializable;
+
 import jp.genuine.training.carmanager.model.car.CarId;
 
-public class InitialStatus {
+public class InitialStatus implements Serializable{
 
 	private CarId carId;
 	private GasolineQuantity gasolineQuantity;
@@ -52,5 +54,6 @@ public class InitialStatus {
 	}
 
 
+	private static final long serialVersionUID = -7153757145061821132L;
 
 }

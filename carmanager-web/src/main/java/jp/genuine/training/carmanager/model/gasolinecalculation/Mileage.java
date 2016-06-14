@@ -1,8 +1,10 @@
 package jp.genuine.training.carmanager.model.gasolinecalculation;
 
-public class Mileage {
+import java.io.Serializable;
 
-	private int value;
+public class Mileage implements Serializable{
+
+	private Integer value;
 
 	public Mileage() {
 	}
@@ -26,5 +28,6 @@ public class Mileage {
 	}
 
 
+	private static final long serialVersionUID = -1446616758746150571L;
 
 }

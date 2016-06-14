@@ -1,8 +1,10 @@
 package jp.genuine.training.carmanager.model.car;
 
-public class GasolineTankCapacity {
+import java.io.Serializable;
 
-	private int value;
+public class GasolineTankCapacity implements Serializable{
+
+	private Integer value;
 
 	public GasolineTankCapacity() {
 	}
@@ -25,5 +27,6 @@ public class GasolineTankCapacity {
 		return String.format("GasolineTankCapacity [value=%s]", value);
 	}
 
+	private static final long serialVersionUID = 7550303798944651847L;
 
 }

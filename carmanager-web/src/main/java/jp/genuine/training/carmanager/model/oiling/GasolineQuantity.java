@@ -1,8 +1,10 @@
 package jp.genuine.training.carmanager.model.oiling;
 
-public class GasolineQuantity {
+import java.io.Serializable;
 
-	private int value;
+public class GasolineQuantity implements Serializable{
+
+	private Integer value;
 
 	public GasolineQuantity() {
 	}
@@ -26,5 +28,6 @@ public class GasolineQuantity {
 	}
 
 
+	private static final long serialVersionUID = 8698396080452996862L;
 
 }

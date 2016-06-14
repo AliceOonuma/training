@@ -1,8 +1,10 @@
 package jp.genuine.training.carmanager.model.oiling;
 
-public class OilingId {
+import java.io.Serializable;
 
-	private int value;
+public class OilingId implements Serializable{
+
+	private Integer value;
 
 	public OilingId() {
 	}
@@ -26,5 +28,6 @@ public class OilingId {
 	}
 
 
+	private static final long serialVersionUID = 6011403518113295121L;
 
 }

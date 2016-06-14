@@ -1,10 +1,11 @@
 package jp.genuine.training.carmanager.model.oiling;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 import jp.genuine.training.carmanager.model.car.CarId;
 
-public class Oiling {
+public class Oiling implements Serializable{
 
 	private OilingId oilingId;
 	private CarId carId;
@@ -99,5 +100,6 @@ public class Oiling {
 				oilingId, carId, oilingDate, gasolinePrice, gasolineQuantity, oilingQuantity, memo);
 	}
 
+	private static final long serialVersionUID = -8546412630597935961L;
 
 }

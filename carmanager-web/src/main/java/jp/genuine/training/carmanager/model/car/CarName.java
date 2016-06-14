@@ -1,6 +1,8 @@
 package jp.genuine.training.carmanager.model.car;
 
-public class CarName {
+import java.io.Serializable;
+
+public class CarName implements Serializable{
 
 	private String value;
 
@@ -27,5 +29,6 @@ public class CarName {
 	}
 
 
+	private static final long serialVersionUID = 2974796535133586335L;
 
 }
