@@ -9,7 +9,7 @@ public class FuelConsumption implements Serializable{
 	public FuelConsumption() {
 	}
 
-	public FuelConsumption(int value) {
+	public FuelConsumption(Integer value) {
 		super();
 		this.value = value;
 	}
@@ -18,7 +18,7 @@ public class FuelConsumption implements Serializable{
 		return value;
 	}
 
-	public void setValue(int value) {
+	public void setValue(Integer value) {
 		this.value = value;
 	}
 

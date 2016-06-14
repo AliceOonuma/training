@@ -12,17 +12,17 @@ public class CarSummaryList implements Serializable{
 		list = new ArrayList<CarSummary>();
 	}
 
-	public CarSummaryList(List<CarSummary> carSummaryList) {
+	public CarSummaryList(List<CarSummary> list) {
 		super();
-		this.list = carSummaryList;
+		this.list = list;
 	}
 
-	public List<CarSummary> getValue() {
+	public List<CarSummary> getList() {
 		return list;
 	}
 
-	public void setValue(List<CarSummary> carSummaryList) {
-		this.list = carSummaryList;
+	public void setList(List<CarSummary> list) {
+		this.list = list;
 	}
 
 	@Override

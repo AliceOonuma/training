@@ -9,7 +9,7 @@ public class GasolineQuantity implements Serializable{
 	public GasolineQuantity() {
 	}
 
-	public GasolineQuantity(int value) {
+	public GasolineQuantity(Integer value) {
 		super();
 		this.value = value;
 	}
@@ -18,7 +18,7 @@ public class GasolineQuantity implements Serializable{
 		return value;
 	}
 
-	public void setValue(int value) {
+	public void setValue(Integer value) {
 		this.value = value;
 	}
 

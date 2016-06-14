@@ -9,7 +9,7 @@ public class CarId implements Serializable{
 	public CarId() {
 	}
 
-	public CarId(int value) {
+	public CarId(Integer value) {
 		super();
 		this.value = value;
 	}
@@ -18,7 +18,7 @@ public class CarId implements Serializable{
 		return value;
 	}
 
-	public void setValue(int value) {
+	public void setValue(Integer value) {
 		this.value = value;
 	}
 

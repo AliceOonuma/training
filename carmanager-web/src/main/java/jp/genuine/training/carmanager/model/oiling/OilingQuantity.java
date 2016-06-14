@@ -9,7 +9,7 @@ public class OilingQuantity implements Serializable{
 	public OilingQuantity() {
 	}
 
-	public OilingQuantity(int value) {
+	public OilingQuantity(Integer value) {
 		super();
 		this.value = value;
 	}
@@ -18,7 +18,7 @@ public class OilingQuantity implements Serializable{
 		return value;
 	}
 
-	public void setValue(int value) {
+	public void setValue(Integer value) {
 		this.value = value;
 	}
 

@@ -9,7 +9,7 @@ public class Mileage implements Serializable{
 	public Mileage() {
 	}
 
-	public Mileage(int value) {
+	public Mileage(Integer value) {
 		super();
 		this.value = value;
 	}
@@ -18,7 +18,7 @@ public class Mileage implements Serializable{
 		return value;
 	}
 
-	public void setValue(int value) {
+	public void setValue(Integer value) {
 		this.value = value;
 	}
 
