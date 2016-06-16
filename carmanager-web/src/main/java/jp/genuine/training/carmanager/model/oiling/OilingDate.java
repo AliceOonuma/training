@@ -5,7 +5,6 @@ import java.time.LocalDate;
 
 public class OilingDate implements Serializable{
 
-	private static final long serialVersionUID = -7815732197353344534L;
 	private LocalDate value;
 
 	public OilingDate() {
@@ -13,6 +12,7 @@ public class OilingDate implements Serializable{
 	}
 
 	public OilingDate(LocalDate value) {
+		super();
 		this.value = value;
 	}
 
@@ -29,6 +29,6 @@ public class OilingDate implements Serializable{
 		return String.format("OilingDate [value=%s]", value);
 	}
 
-
+	private static final long serialVersionUID = 6801843933795331174L;
 
 }
