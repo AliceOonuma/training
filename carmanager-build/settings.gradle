@@ -1,3 +1,4 @@
 rootProject.name = 'carmanager'
 
 includeFlat 'carmanager-web'
+includeFlat 'test-util'

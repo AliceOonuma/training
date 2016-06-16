@@ -29,7 +29,6 @@ public class OilingDate implements Serializable{
 		return String.format("OilingDate [value=%s]", value);
 	}
 
-
 	private static final long serialVersionUID = 6801843933795331174L;
 
 }
