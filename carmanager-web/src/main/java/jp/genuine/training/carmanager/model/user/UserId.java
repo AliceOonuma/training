@@ -1,12 +1,12 @@
 package jp.genuine.training.carmanager.model.user;
 
 public class UserId {
-	private int value;
+	private Integer value;
 
 	public UserId() {
 	}
 
-	public UserId(int value) {
+	public UserId(Integer value) {
 		this.value = value;
 	}
 
@@ -14,7 +14,7 @@ public class UserId {
 		return value;
 	}
 
-	public void setValue(int value) {
+	public void setValue(Integer value) {
 		this.value = value;
 	}
 
