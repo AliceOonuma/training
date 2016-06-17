@@ -18,6 +18,6 @@ sample:
     sampledb:
       sql-script-encoding: UTF-8
       driver-class-name: org.postgresql.Driver
-      url: jdbc:postgresql://localhost:5432/school
-      username: owner_school
-      password: owner_school#1
+      url: jdbc:postgresql://localhost:5432/carmanager
+      username: owner_carmanager
+      password: owner_carmanager#1
