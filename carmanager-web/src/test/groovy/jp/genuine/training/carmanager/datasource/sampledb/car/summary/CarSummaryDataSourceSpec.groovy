@@ -1,4 +1,4 @@
-package jp.genuine.training.carmanager.datasource.sampledb.car
+package jp.genuine.training.carmanager.datasource.sampledb.car.summary
 
 import javax.sql.DataSource
 
@@ -24,9 +24,9 @@ import spock.lang.Unroll
 @ActiveProfiles("test")
 @ContextConfiguration(classes = TestConfig.class, initializers = ConfigFileApplicationContextInitializer.class)
 
-public class CarDataSourceSpec extends Specification{
+public class CarSummaryDataSourceSpec extends Specification{
 	@Autowired
-	CarDataSource carDataSource;
+	CarSummaryDataSource carDataSource;
 
 	@Autowired
 	@Qualifier("sampleDBDataSource")
