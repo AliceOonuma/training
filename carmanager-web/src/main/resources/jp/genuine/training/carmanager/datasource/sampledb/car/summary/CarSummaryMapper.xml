@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="jp.genuine.training.carmanager.datasource.sampledb.car.CarMapper">
+<mapper namespace="jp.genuine.training.carmanager.datasource.sampledb.car.summary.CarSummaryMapper">
 
 	<resultMap type="jp.genuine.training.carmanager.model.car.summary.CarSummary" id="car">
 		<id column="car_id" property="carId.value"/>
