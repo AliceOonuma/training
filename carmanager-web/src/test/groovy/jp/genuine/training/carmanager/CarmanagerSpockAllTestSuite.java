@@ -7,7 +7,7 @@ import jp.genuine.training.carmanager.datasource.CoreDataSourceTestSuite;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-    CoreDataSourceTestSuite.class
+    CoreDataSourceTestSuite.class,
 })
 public class CarmanagerSpockAllTestSuite
 {
