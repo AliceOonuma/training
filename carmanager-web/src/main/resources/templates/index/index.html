@@ -9,7 +9,7 @@
 	<div>
 		<span  sec:authorize="hasRole('ROLE_ADMIN')">管理者権限でログイン中</span>
 	    <span sec:authorize="hasRole('ROLE_USER')">一般権限でログイン中</span><br/>
-	    <a href="./car/summary">車一覧へ</a>
+	    <a href="list.html" th:href="@{/car/summary}">車一覧へ</a>
 	</div>
 
 	<footer th:include="template :: fragment_footer"></footer>
