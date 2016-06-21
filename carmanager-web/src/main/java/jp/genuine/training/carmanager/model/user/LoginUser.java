@@ -25,8 +25,8 @@ public class LoginUser implements Serializable,UserDetails{
 		return user;
 	}
 
-	public User setUser() {
-		return user;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	@Override

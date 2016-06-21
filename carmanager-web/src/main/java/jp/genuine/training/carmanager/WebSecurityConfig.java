@@ -7,7 +7,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.web.bind.support.AuthenticationPrincipalArgumentResolver;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import jp.genuine.training.carmanager.service.user.CarmanagerUserDetailsServiceImpl;
@@ -50,12 +49,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	{
 		return new CarmanagerUserDetailsServiceImpl();
 	}
-
-	@Bean
-	AuthenticationPrincipalArgumentResolver authenticationPrincipalArgumentResolver()
-	{
-		return new AuthenticationPrincipalArgumentResolver();
-	}
-
 
 }
