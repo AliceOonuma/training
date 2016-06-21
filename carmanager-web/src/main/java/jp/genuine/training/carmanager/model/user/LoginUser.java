@@ -25,6 +25,10 @@ public class LoginUser implements Serializable,UserDetails{
 		return user;
 	}
 
+	public void setUser(User user) {
+		this.user = user;
+	}
+
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();

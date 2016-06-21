@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head th:include="template :: fragment_html_head(title='車一覧')">
+</head>
+<body>
+	<header th:include="template :: fragment_header(title='車一覧"></header>
+
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>車名</th>
+		</tr>
+		<tr th:each="carList:${carSummaryList.list}">
+			<td th:text="${carList.carId.value}"></td>
+			<td th:text="${carList.carName.value}"></td>
+		</tr>
+	</table>
+
+	<a href="index.html" th:href="@{/index}">戻る</a>
+
+	<footer th:include="template :: fragment_footer"></footer>
+</body>
+</html>
