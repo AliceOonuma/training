@@ -5,6 +5,7 @@
 </head>
 <body>
 	<header th:include="template :: fragment_header(title='車一覧"></header>
+	<h2>車一覧</h2>
 
 	<table>
 		<tr>
@@ -14,6 +15,7 @@
 		<tr th:each="carList:${carSummaryList.list}">
 			<td th:text="${carList.carId.value}"></td>
 			<td th:text="${carList.carName.value}"></td>
+			<td><a href="detail.html" th:href="@{/car/detail/{carId}(carId=${carList.carId.value})}">詳細</a></td>
 		</tr>
 	</table>
 
