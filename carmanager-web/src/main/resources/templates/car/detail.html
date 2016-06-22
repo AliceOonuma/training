@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head th:include="template :: fragment_html_head(title='自動車情報')">
+</head>
+<body>
+	<header th:include="template :: fragment_header(title='自動車情報"></header>
+	<h2>自動車情報</h2>
+
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>車名</th>
+			<th>ガソリンタンク容量</th>
+			<th>燃料</th>
+			<th>メモ</th>
+		</tr>
+		<tr>
+			<td th:text="${car.carId.value}"></td>
+			<td th:text="${car.carName.value}"></td>
+			<td th:text="${car.gasolineTankCapacity.value}"></td>
+			<td th:text="${car.gasolineType.value}"></td>
+			<td th:text="${car.memo.value}"></td>
+		</tr>
+	</table>
+
+	<a href="list.html" th:href="@{/car/summary}">一覧へ</a>
+	<a href="index.html" th:href="@{/index}">トップページへ</a>
+
+	<footer th:include="template :: fragment_footer"></footer>
+</body>
+</html>
