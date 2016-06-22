@@ -11,7 +11,7 @@ import org.springframework.web.context.request.WebRequest;
 
 import jp.genuine.training.carmanager.model.car.summary.CarSummaryList;
 import jp.genuine.training.carmanager.model.user.LoginUser;
-import jp.genuine.training.carmanager.service.carsummarylist.CarSummaryListService;
+import jp.genuine.training.carmanager.service.car.summary.CarSummaryListService;
 
 @Controller
 @RequestMapping("/car/summary")

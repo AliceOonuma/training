@@ -1,4 +1,4 @@
-package jp.genuine.training.carmanager.service.carsummarylist;
+package jp.genuine.training.carmanager.service.car.summary;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
