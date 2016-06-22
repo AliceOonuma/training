@@ -1,14 +1,10 @@
-package jp.genuine.training.carmanager.datasource.sampledb.car.summary
+package jp.genuine.training.carmanager.datasource.sampledb.car
 
 import javax.sql.DataSource
 
 import jp.genuine.test.util.LogbackHelper
 import jp.genuine.training.carmanager.TestConfig
-import jp.genuine.training.carmanager.model.user.AccountName
-import jp.genuine.training.carmanager.model.user.Name
-import jp.genuine.training.carmanager.model.user.Password
-import jp.genuine.training.carmanager.model.user.User
-import jp.genuine.training.carmanager.model.user.UserId
+import jp.genuine.training.carmanager.model.car.CarId
 
 import org.dbunit.database.DatabaseConnection
 import org.dbunit.database.IDatabaseConnection
@@ -24,9 +20,9 @@ import spock.lang.Unroll
 @ActiveProfiles("test")
 @ContextConfiguration(classes = TestConfig.class, initializers = ConfigFileApplicationContextInitializer.class)
 
-public class CarSummaryDataSourceSpec extends Specification{
+public class CarDataSourceSpec extends Specification{
 	@Autowired
-	CarSummaryDataSource carSummaryDataSource;
+	CarDataSource carDataSource;
 
 	@Autowired
 	@Qualifier("sampleDBDataSource")
@@ -55,20 +51,22 @@ public class CarSummaryDataSourceSpec extends Specification{
 	def "<#TEST_NAME>find:データの取得"()
 	{
 		given:
-			def testUser = new User(new UserId( 3 ),new Password( "#5678" ),new AccountName( "suzuki" ),new Name( "鈴木勇太" ))
+			def carId = new CarId( CAR_ID )
 
 		expect:
-			def resultCarSummaryList = carSummaryDataSource.listOf( testUser )
-			resultCarSummaryList.list[INDEX].carId.value == CAR_ID
-			resultCarSummaryList.list[INDEX].carName.value == CAR_NAME
+			def resultCar = carDataSource.findBy( carId )
+			resultCar.carId.value == CAR_ID
+			resultCar.carName.value == CAR_NAME
+			resultCar.gasolineTankCapacity.value == GASOLINETANK_CAPACITY
+			resultCar.gasolineType.value == GASOLINE_TYPE
+			resultCar.memo.value == MEMO
 
 
 		where:
 			TEST_NAME = this.class.name
 
-			INDEX|USER_ID|CAR_ID|CAR_NAME
-			0|3|2|"car1"
-			1|3|3|"car2"
+			CAR_ID|CAR_NAME|GASOLINETANK_CAPACITY|GASOLINE_TYPE|MEMO
+			3|"car2"|50|"レギュラー"|""
 
 	}
 

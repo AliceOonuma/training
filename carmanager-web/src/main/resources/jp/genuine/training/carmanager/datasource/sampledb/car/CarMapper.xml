@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="jp.genuine.training.carmanager.datasource.sampledb.car.CarMapper">
+
+	<resultMap type="jp.genuine.training.carmanager.model.car.Car" id="carDetail">
+		<id column="car_id" property="carId.value"/>
+		<result column="car_name" property="carName.value"/>
+		<result column="gasolinetank_capacity" property="gasolineTankCapacity.value"/>
+		<result column="gasoline_name" property="gasolineType.value"/>
+		<result column="memo" property="memo.value"/>
+	</resultMap>
+
+	<select id="findBy" resultMap="carDetail" flushCache="true">
+
+	SELECT
+		car.car_id,
+		car.car_name,
+		car.gasolinetank_capacity,
+		gasoline_type.gasoline_name,
+		car.memo
+	FROM
+		car.car
+	INNER JOIN
+		car.gasoline_type
+	ON
+		gasoline_type.gasoline_type = car.gasoline_type
+	WHERE
+		car.car_id = #{carId.value};
+
+	</select>
+
+</mapper>
