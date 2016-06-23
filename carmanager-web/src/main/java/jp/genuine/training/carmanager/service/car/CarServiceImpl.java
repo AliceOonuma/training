@@ -4,6 +4,7 @@ package jp.genuine.training.carmanager.service.car;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import jp.genuine.training.carmanager.exception.ResourceNotFoundException;
 import jp.genuine.training.carmanager.model.car.Car;
 import jp.genuine.training.carmanager.model.car.CarId;
 import jp.genuine.training.carmanager.model.car.CarRepository;
@@ -18,7 +19,7 @@ public class CarServiceImpl implements CarService{
 
 	@Override
 	public Car findBy(CarId carId) {
-		Car car = carRepository.findBy(carId);
+		Car car = carRepository.findBy(carId).orElseThrow(ResourceNotFoundException :: new);
 		return car;
 	}
 
