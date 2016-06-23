@@ -1,5 +1,7 @@
 package jp.genuine.training.carmanager.datasource.sampledb.car;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -14,9 +16,9 @@ public class CarDataSource implements CarRepository{
 	private CarMapper carMapper;
 
 	@Override
-	public Car findBy(CarId carId) {
+	public Optional<Car> findBy(CarId carId) {
 		Car car = carMapper.findBy(carId);
-		return car;
+		return Optional.ofNullable(car);
 	}
 
 

@@ -1,7 +1,9 @@
 package jp.genuine.training.carmanager.model.car;
 
+import java.util.Optional;
+
 public interface CarRepository {
 
-	public Car findBy(CarId carId);
+	public Optional<Car> findBy(CarId carId);
 
 }
