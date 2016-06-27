@@ -2,8 +2,11 @@ package jp.genuine.training.carmanager.model.car;
 
 import java.io.Serializable;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class GasolineType implements Serializable{
 
+	@NotEmpty
 	private String value;
 
 	public GasolineType() {

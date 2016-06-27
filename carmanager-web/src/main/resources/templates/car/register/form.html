@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+	<head th:include="template :: fragment_html_head(title='New Car')">
+			<meta charset="UTF-8" />
+	</head>
+	<body>
+		<header th:include="template :: fragment_header(title='New Car')"></header>
+		<div class="mdl-grid">
+			<div class="mdl-cell mdl-cell--2-col"></div>
+			<div class="mdl-cell mdl-cell--8-col">
+				<div class="mdl-card__wide mdl-card mdl-shadow--2dp">
+					<div class="mdl-card__title">
+						<h2><i class="fa fa-pencil" aria-hidden="true"></i> Create Car</h2>
+					</div>
+					<div>
+						<form th:action="@{/car/register}" th:object="${carRegister}" method="POST">
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" th:classappend="*{#fields.hasErrors('carName.value')}? is-invalid">
+								<label class="mdl-textfield__label">車名</label>
+								<input type="text" th:field="*{carName.value}" class="mdl-textfield__input" />
+								<span th:if="*{#fields.hasErrors('carName.value')}" th:errors="*{carName.value}" class="mdl-textfield__error" ></span>
+							</div>
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" th:classappend="*{#fields.hasErrors('gasolineTankCapacity.value')}? is-invalid">
+								<label class="mdl-textfield__label">ガソリンタンク容量</label>
+								<input type="text" th:field="*{gasolineTankCapacity.value}" class="mdl-textfield__input" />
+								<span th:if="*{#fields.hasErrors('gasolineTankCapacity.value')}" th:errors="*{gasolineTankCapacity.value}" class="mdl-textfield__error" ></span>
+							</div>
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" th:classappend="*{#fields.hasErrors('gasolineQuantity.value')}? is-invalid">
+								<label class="mdl-textfield__label">現在のガソリン残量</label>
+								<input type="text" th:field="*{gasolineQuantity.value}" class="mdl-textfield__input" />
+								<span th:if="*{#fields.hasErrors('gasolineQuantity.value')}" th:errors="*{gasolineQuantity.value}" class="mdl-textfield__error" ></span>
+							</div>
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" th:classappend="*{#fields.hasErrors('initialOdometer.value')}? is-invalid">
+								<label class="mdl-textfield__label">現在のODOメーター</label>
+								<input type="text" th:field="*{initialOdometer.value}" class="mdl-textfield__input" />
+								<span th:if="*{#fields.hasErrors('initialOdometer.value')}" th:errors="*{initialOdometer.value}" class="mdl-textfield__error" ></span>
+							</div>
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" th:classappend="*{#fields.hasErrors('gasolineType.value')}? is-invalid">
+								<label class="mdl-textfield__label">種類</label>
+								<select class="mdl-textfield__input" th:field="*{gasolineType.value}">
+									<option value=""></option>
+									<option value="regular">レギュラー</option>
+									<option value="highoctane">ハイオク</option>
+								</select>
+								<span th:if="*{#fields.hasErrors('gasolineType.value')}" th:errors="*{gasolineType.value}" class="mdl-textfield__error" ></span>
+							</div>
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" th:classappend="*{#fields.hasErrors('memo.value')}? is-invalid">
+								<label class="mdl-textfield__label">メモ</label>
+								<textarea class="mdl-textfield__input" type="text" rows="3"  th:field="*{memo.value}" ></textarea>
+								<span th:if="*{#fields.hasErrors('memo.value')}" th:errors="*{memo.value}" class="mdl-textfield__error" ></span>
+							</div>
+							<div class="mdl-card__actions">
+								<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Submit</button>
+							</div>
+						</form>
+					</div>
+					<a href="list.html" th:href="@{/car/summary}">自動車一覧へ</a><br/>
+					<a href="index.html" th:href="@{/}">トップページへ</a><br/>
+				</div>
+			</div>
+			<div class="mdl-cell mdl-cell--2-col"></div>
+		</div>
+		<footer th:include="template :: fragment_footer"></footer>
+	</body>
+</html>

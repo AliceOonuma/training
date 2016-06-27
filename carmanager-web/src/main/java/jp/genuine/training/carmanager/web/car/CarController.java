@@ -19,7 +19,7 @@ public class CarController {
 	@Autowired
 	private CarService carService;
 
-	@RequestMapping(value="/detail/{carId}",method=RequestMethod.GET)
+	@RequestMapping(value="/detail/{carId:\\d+}",method=RequestMethod.GET)
 	public String detail(
 			@PathVariable("carId") Integer carId,
 			Model model,

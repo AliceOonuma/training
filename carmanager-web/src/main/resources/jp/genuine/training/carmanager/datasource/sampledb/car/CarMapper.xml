@@ -29,4 +29,48 @@
 
 	</select>
 
+	<resultMap type="jp.genuine.training.carmanager.model.car.CarId" id="nextCarId">
+		<id column="nextval" property="value" />
+	</resultMap>
+
+	<select id="nextId" resultMap="nextCarId" flushCache="true">
+
+	SELECT nextval('car.car_id')
+
+	</select>
+
+	<insert id="register" parameterType="jp.genuine.training.carmanager.model.car.CarRegister">
+
+	INSERT INTO
+		car.car( car_id ,
+			user_id ,
+			car_name ,
+			gasoline_type ,
+			gasolinetank_capacity ,
+			memo )
+	VALUES
+		( #{carRegister.carId.value} ,
+		#{user.userId.value},
+		#{carRegister.carName.value} ,
+		#{carRegister.gasolineType.value} ,
+		#{carRegister.gasolineTankCapacity.intValue} ,
+		#{carRegister.memo.value} )
+
+	</insert>
+
+	<insert id="registerInitialStatus" parameterType="jp.genuine.training.carmanager.model.car.CarRegister">
+
+	INSERT INTO
+		car.initial_car_status
+			( car_id,
+			odometer ,
+			gasoline_quantity )
+	VALUES
+		 ( #{carRegister.carId.value} ,
+		#{carRegister.initialOdometer.intValue} ,
+		#{carRegister.gasolineQuantity.intValue} )
+
+
+	</insert>
+
 </mapper>

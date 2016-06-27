@@ -7,7 +7,9 @@ import org.springframework.stereotype.Repository;
 
 import jp.genuine.training.carmanager.model.car.Car;
 import jp.genuine.training.carmanager.model.car.CarId;
+import jp.genuine.training.carmanager.model.car.CarRegister;
 import jp.genuine.training.carmanager.model.car.CarRepository;
+import jp.genuine.training.carmanager.model.user.User;
 
 @Repository
 public class CarDataSource implements CarRepository{
@@ -21,10 +23,17 @@ public class CarDataSource implements CarRepository{
 		return Optional.ofNullable(car);
 	}
 
+	@Override
+	public CarId nextId() {
+		CarId nextCarId = carMapper.nextId();
+		return nextCarId;
+	}
 
-
-
-
+	@Override
+	public void register(CarRegister carRegister,User user) {
+		carMapper.register(carRegister,user);
+		carMapper.registerInitialStatus(carRegister);
+	}
 
 
 }
