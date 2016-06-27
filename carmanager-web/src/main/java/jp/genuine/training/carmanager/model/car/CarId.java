@@ -14,7 +14,7 @@ public class CarId implements Serializable{
 		this.value = value;
 	}
 
-	public int getValue() {
+	public Integer getValue() {
 		return value;
 	}
 

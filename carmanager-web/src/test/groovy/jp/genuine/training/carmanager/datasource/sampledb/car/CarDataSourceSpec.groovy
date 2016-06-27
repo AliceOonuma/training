@@ -70,4 +70,17 @@ public class CarDataSourceSpec extends Specification{
 
 	}
 
+	@Unroll
+	def "<#TEST_NAME2>find:データの取得"()
+	{
+
+		expect:
+			def resultCarId = carDataSource.nextId()
+			resultCarId.value != null
+		where:
+			TEST_NAME2 = this.class.name
+
+	}
+
+
 }

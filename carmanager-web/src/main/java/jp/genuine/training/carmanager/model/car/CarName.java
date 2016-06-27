@@ -2,8 +2,13 @@ package jp.genuine.training.carmanager.model.car;
 
 import java.io.Serializable;
 
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class CarName implements Serializable{
 
+	@NotEmpty
+	@Length(max=10)
 	private String value;
 
 	public CarName() {

@@ -2,23 +2,32 @@ package jp.genuine.training.carmanager.model.car.initialstatus;
 
 import java.io.Serializable;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class GasolineQuantity implements Serializable{
 
-	private Integer value;
+	@NotEmpty
+	private String value;
 
 	public GasolineQuantity() {
+		value = "";
 	}
 
-	public GasolineQuantity(Integer value) {
+	public GasolineQuantity(String value) {
 		super();
 		this.value = value;
 	}
 
-	public int getValue() {
+	public int getIntValue(){
+		int i = Integer.parseInt(value);
+		return i;
+	}
+
+	public String getValue() {
 		return value;
 	}
 
-	public void setValue(Integer value) {
+	public void setValue(String value) {
 		this.value = value;
 	}
 
