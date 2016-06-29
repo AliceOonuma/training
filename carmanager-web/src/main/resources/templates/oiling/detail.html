@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:include="template :: fragment_html_head(title='ガソリン家計簿')">
+			<meta charset="UTF-8" />
+	</head>
+	<body>
+		<header th:include="template :: fragment_header(title='ガソリン家計簿')"></header>
+		<div class="mdl-grid">
+			<div class="mdl-cell mdl-cell--2-col"></div>
+			<div class="mdl-cell mdl-cell--8-col">
+				<div class="mdl-card__wide mdl-card mdl-shadow--2dp">
+					<div class="mdl-card__title">
+						<h2><i class="fa fa-list-alt" aria-hidden="true"></i> <span th:text="${oiling.oilingDate.value}"></span>の給油情報</h2>
+					</div>
+					<div id="carDetail">
+				<ul class="mdl-list-icon mdl-list">
+					<li class="mdl-list__item">
+						<span class="mdl-list__item-primary-content">
+							<i class="fa fa-jpy fa-2x"></i>1Lあたりのガソリン価格
+						</span>
+						<span><span th:text="${oiling.gasolinePrice.value}">carName</span> 円
+						</span>
+					</li>
+					<li class="mdl-list__item">
+						<span class="mdl-list__item-primary-content">
+							<i class="fa fa-flag fa-2x"></i>ODOメーターの距離
+						</span>
+						<span><span th:text="${oiling.odometer.value}">carName</span> km
+						</span>
+					</li>
+					<li class="mdl-list__item">
+						<span class="mdl-list__item-primary-content">
+							<i class="fa fa-flask fa-2x"></i>給油量
+						</span>
+						<span><span th:text="${oiling.oilingQuantity.value}">carName</span> L
+						</span>
+					</li>
+					<li class="mdl-list__item">
+						<span class="mdl-list__item-primary-content">
+							<i class="fa fa-flask fa-2x"></i>給油後のガソリン量
+						</span>
+						<span><span th:text="${oiling.gasolineQuantity.value}">carName</span> L
+						</span>
+					</li>
+					<li class="mdl-list__item">
+						<span class="mdl-list__item-primary-content">
+							<i class="fa fa-jpy fa-2x"></i>合計金額
+						</span>
+						<span><span th:text="${oiling.oilingQuantity.value} * ${oiling.gasolinePrice.value}">carName</span> 円
+						</span>
+					</li>
+				</ul>
+					</div>
+				<form th:action="@{/car/summary}">
+					<div  class="mdl-card__actions">
+						<button  class="mdl-button mdl-js-button mdl-button--raised">一覧へ戻る</button>
+					</div>
+				</form>
+				</div>
+			</div>
+			<div class="mdl-cell mdl-cell--2-col"></div>
+		</div>
+
+		<footer th:include="template :: fragment_footer"></footer>
+	</body>
+</html>
