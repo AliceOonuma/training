@@ -2,15 +2,19 @@ package jp.genuine.training.carmanager.model.oiling;
 
 import java.io.Serializable;
 
-public class GasolineQuantity implements Serializable{
+import org.hibernate.validator.constraints.NotEmpty;
 
+public class Odometer implements Serializable{
+
+
+	@NotEmpty
 	private String value;
 
-	public GasolineQuantity() {
+	public Odometer() {
 		value = "";
 	}
 
-	public GasolineQuantity(String value) {
+	public Odometer(String value) {
 		super();
 		this.value = value;
 	}
@@ -30,10 +34,9 @@ public class GasolineQuantity implements Serializable{
 
 	@Override
 	public String toString() {
-		return String.format("GasolineQuantity [value=%s]", value);
+		return String.format("Odometer [value=%s]", value);
 	}
 
-
-	private static final long serialVersionUID = 8698396080452996862L;
+	private static final long serialVersionUID = -5574277850270289081L;
 
 }
