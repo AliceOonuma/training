@@ -73,4 +73,81 @@
 
 	</insert>
 
+	<update id="modify">
+
+	UPDATE
+		car.car
+	SET
+		car_id = #{carRegister.carId.value} ,
+		user_id = #{user.userId.value},
+		car_name = #{carRegister.carName.value} ,
+		gasolinetank_capacity = #{carRegister.gasolineTankCapacity.intValue} ,
+		gasoline_type = #{carRegister.gasolineType.value} ,
+		memo = #{carRegister.memo.value}
+	WHERE
+		car_id = #{carRegister.carId.value}
+
+
+	</update>
+
+	<update id="modifyInitialStatus">
+
+	UPDATE
+		car.initial_car_status
+	SET
+		car_id = #{carRegister.carId.value},
+		odometer = #{carRegister.initialOdometer.intValue},
+		gasoline_quantity = #{carRegister.gasolineQuantity.intValue}
+	WHERE
+		car_id = #{carRegister.carId.value}
+
+	</update>
+
+	<resultMap type="jp.genuine.training.carmanager.model.car.CarRegister" id="carModify">
+		<id column="car_id" property="carId.value" />
+		<result column="car_name" property="carName.value"/>
+		<result column="gasolinetank_capacity" property="gasolineTankCapacity.value"/>
+		<result column="gasoline_quantity" property="gasolineQuantity.value"/>
+		<result column="odometer" property="initialOdometer.value"/>
+		<result column="gasoline_type" property="gasolineType.value"/>
+		<result column="memo" property="memo.value"/>
+	</resultMap>
+
+	<select id="findByDetail" resultMap="carModify" flushCache="true">
+
+	SELECT
+		car.car_id,
+		car.car_name,
+		car.gasolinetank_capacity,
+		initial_car_status.gasoline_quantity,
+		initial_car_status.odometer,
+		car.gasoline_type,
+		car.memo
+	FROM
+		car.car
+	INNER JOIN
+		car.initial_car_status
+	ON
+		car.car_id = initial_car_status.car_id
+	WHERE
+		car.car_id = #{carId.value};
+
+	</select>
+
+	<resultMap type="jp.genuine.training.carmanager.model.car.GasolineType" id="gasolineType">
+		<id column="gasoline_type" property="value" />
+		<result column="gasoline_name" property="name" />
+	</resultMap>
+
+	<select id="type" resultMap="gasolineType" flushCache="true">
+
+	SELECT
+		gasoline_type.gasoline_type,
+		gasoline_type.gasoline_name
+	FROM
+		car.gasoline_type;
+
+	</select>
+
+
 </mapper>

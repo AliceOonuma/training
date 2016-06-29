@@ -24,6 +24,9 @@
 			<th>メモ</th>
 			<td th:text="${car.memo.value}"></td>
 		</tr>
+		<tr>
+			<td><a href="modify.html" th:href="@{/car/modify/{carId}(carId=${car.carId.value})}">編集</a></td>
+		</tr>
 	</table>
 
 	<a href="list.html" th:href="@{/car/summary}">一覧へ</a>
