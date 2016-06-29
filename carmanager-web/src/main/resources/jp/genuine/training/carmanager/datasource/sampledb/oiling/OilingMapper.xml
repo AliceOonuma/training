@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="jp.genuine.training.carmanager.datasource.sampledb.oiling.OilingMapper">
+
+	<resultMap type="jp.genuine.training.carmanager.model.oiling.Oiling" id="oilingDetail">
+		<id column="oiling_id" property="oilingId.value" />
+		<result column="car_id" property="carId.value" />
+		<result column="oiling_day" property="oilingDate.value" />
+		<result column="gasoline_price" property="gasolinePrice.value" />
+		<result column="gasoline_quantity" property="gasolineQuantity.value" />
+		<result column="oiling_quantity" property="oilingQuantity.value" />
+		<result column="memo" property="memo.value" />
+		<result column="odometer" property="odometer.value" />
+	</resultMap>
+
+	<select id="findByOiling" resultMap="oilingDetail" flushCache="true">
+
+	SELECT
+		oiling.oiling_id,
+		oiling.car_id,
+		oiling.oiling_day,
+		oiling_detail.gasoline_quantity,
+		oiling_detail.oiling_quantity,
+		oiling_detail.odometer,
+		oiling_detail.gasoline_price,
+		oiling_detail.memo
+	FROM
+		oiling.oiling
+	INNER JOIN
+		oiling.oiling_detail
+	ON
+		oiling.oiling_id = oiling_detail.oiling_id
+	WHERE
+		oiling.oiling_id = #{oilingId.value};
+
+	</select>
+
+</mapper>

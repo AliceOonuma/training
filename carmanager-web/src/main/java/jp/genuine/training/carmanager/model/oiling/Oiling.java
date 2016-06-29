@@ -2,17 +2,28 @@ package jp.genuine.training.carmanager.model.oiling;
 
 import java.io.Serializable;
 
+import javax.validation.Valid;
+
 import jp.genuine.training.carmanager.model.car.CarId;
 
 public class Oiling implements Serializable{
 
+	@Valid
 	private OilingId oilingId;
+	@Valid
 	private CarId carId;
+	@Valid
 	private OilingDate oilingDate;
+	@Valid
 	private GasolinePrice gasolinePrice;
+	@Valid
 	private GasolineQuantity gasolineQuantity;
+	@Valid
 	private OilingQuantity oilingQuantity;
+	@Valid
 	private Memo memo;
+	@Valid
+	private Odometer odometer;
 
 	public Oiling() {
 		oilingId = new OilingId();
@@ -22,10 +33,22 @@ public class Oiling implements Serializable{
 		gasolineQuantity = new GasolineQuantity();
 		oilingQuantity = new OilingQuantity();
 		memo = new Memo();
+		odometer = new Odometer();
+	}
+
+	public Oiling(OilingId oilingId){
+		this.oilingId = oilingId;
+		carId = new CarId();
+		oilingDate = new OilingDate();
+		gasolinePrice = new GasolinePrice();
+		gasolineQuantity = new GasolineQuantity();
+		oilingQuantity = new OilingQuantity();
+		memo = new Memo();
+		odometer = new Odometer();
 	}
 
 	public Oiling(OilingId oilingId, CarId carId, OilingDate oilingDate, GasolinePrice gasolinePrice,
-			GasolineQuantity gasolineQuantity, Memo memo, OilingQuantity oilingQuantity) {
+			GasolineQuantity gasolineQuantity, OilingQuantity oilingQuantity, Memo memo, Odometer odometer) {
 		super();
 		this.oilingId = oilingId;
 		this.carId = carId;
@@ -34,6 +57,7 @@ public class Oiling implements Serializable{
 		this.gasolineQuantity = gasolineQuantity;
 		this.oilingQuantity = oilingQuantity;
 		this.memo = memo;
+		this.odometer = odometer;
 	}
 
 	public OilingId getOilingId() {
@@ -64,6 +88,10 @@ public class Oiling implements Serializable{
 		return memo;
 	}
 
+	public Odometer getOdometer() {
+		return odometer;
+	}
+
 	public void setOilingId(OilingId oilingId) {
 		this.oilingId = oilingId;
 	}
@@ -92,11 +120,15 @@ public class Oiling implements Serializable{
 		this.memo = memo;
 	}
 
+	public void setOdometer(Odometer odometer) {
+		this.odometer = odometer;
+	}
+
 	@Override
 	public String toString() {
 		return String.format(
-				"Oiling [oilingId=%s, carId=%s, oilingDate=%s, gasolinePrice=%s, gasolineQuantity=%s, oilingQuantity=%s, memo=%s]",
-				oilingId, carId, oilingDate, gasolinePrice, gasolineQuantity, oilingQuantity, memo);
+				"Oiling [oilingId=%s, carId=%s, oilingDate=%s, gasolinePrice=%s, gasolineQuantity=%s, oilingQuantity=%s, memo=%s, odometer=%s]",
+				oilingId, carId, oilingDate, gasolinePrice, gasolineQuantity, oilingQuantity, memo, odometer);
 	}
 
 	private static final long serialVersionUID = -8546412630597935961L;

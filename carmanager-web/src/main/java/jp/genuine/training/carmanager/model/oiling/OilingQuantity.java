@@ -2,23 +2,32 @@ package jp.genuine.training.carmanager.model.oiling;
 
 import java.io.Serializable;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class OilingQuantity implements Serializable{
 
-	private Integer value;
+	@NotEmpty
+	private String value;
 
 	public OilingQuantity() {
+		value = "";
 	}
 
-	public OilingQuantity(Integer value) {
+	public OilingQuantity(String value) {
 		super();
 		this.value = value;
 	}
 
-	public int getValue() {
+	public String getValue() {
 		return value;
 	}
 
-	public void setValue(Integer value) {
+	public int getIntValue(){
+		int i = Integer.parseInt(value);
+		return i;
+	}
+
+	public void setValue(String value) {
 		this.value = value;
 	}
 
