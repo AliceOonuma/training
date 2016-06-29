@@ -14,7 +14,9 @@
 		<tr th:each="carList:${carSummaryList.list}">
 			<td th:text="${carList.carName.value}"></td>
 			<td><a href="detail.html" th:href="@{/car/detail/{carId}(carId=${carList.carId.value})}">詳細</a></td>
+			<td><a href="modify.html" th:href="@{/car/modify/{carId}(carId=${carList.carId.value})}">編集</a></td>
 		</tr>
+
 	</table>
 
 	<a href="index.html" th:href="@{/index}">戻る</a>
