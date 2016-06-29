@@ -1,37 +1,66 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
-<head th:include="template :: fragment_html_head(title='自動車情報')">
-</head>
-<body>
-	<header th:include="template :: fragment_header(title='自動車情報"></header>
-	<h2>自動車情報</h2>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:include="template :: fragment_html_head(title='ガソリン家計簿')">
+			<meta charset="UTF-8" />
+	</head>
+	<body>
+		<header th:include="template :: fragment_header(title='ガソリン家計簿')"></header>
+		<div class="mdl-grid">
+			<div class="mdl-cell mdl-cell--2-col"></div>
+			<div class="mdl-cell mdl-cell--8-col">
+				<div class="mdl-card__wide mdl-card mdl-shadow--2dp">
+					<div class="mdl-card__title">
+						<h2><i class="fa fa-list-alt" aria-hidden="true"></i> 自動車情報</h2>
+					</div>
+					<div id="carDetail">
+				<ul class="mdl-list-icon mdl-list">
+					<li class="mdl-list__item">
+						<span class="mdl-list__item-primary-content">
+							<i class="fa fa-car fa-2x"></i>車名
+						</span>
+						<span><span th:text="${car.carName.value}">carName</span>
+						</span>
+					</li>
+					<li class="mdl-list__item">
+						<span class="mdl-list__item-primary-content">
+							<i class="fa fa-flask fa-2x"></i>ガソリンタンク容量
+						</span>
+						<span><span th:text="${car.gasolineTankCapacity.value}">gasolineTankCapacity</span>L
+						</span>
+					</li>
+					<li class="mdl-list__item">
+						<span class="mdl-list__item-primary-content">
+							<i class="fa fa-tint fa-2x"></i>ガソリン
+						</span>
+						<span><span th:text="${car.gasolineType.value}">gasolineType</span>
+						</span>
+					</li>
+					<li class="mdl-list__item">
+						<span class="mdl-list__item-primary-content">
+							<i class="fa fa-sticky-note-o fa-2x"></i>メモ
+						</span>
+					</li>
+					<li class="mdl-list__item">
+						<span><span th:text="${car.memo.value}">memo</span>
+						</span>
+					</li>
+				</ul>
+					</div>
+				<form th:action="@{/car/modify/{carId}(carId = ${car.carId.value})}">
+					<div  class="mdl-card__actions">
+						<button  class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">編集</button>
+					</div>
+				</form>
+				<form th:action="@{/car/summary}">
+					<div  class="mdl-card__actions">
+						<button  class="mdl-button mdl-js-button mdl-button--raised">一覧へ戻る</button>
+					</div>
+				</form>
+				</div>
+			</div>
+			<div class="mdl-cell mdl-cell--2-col"></div>
+		</div>
 
-	<table>
-		<tr>
-			<th>車名</th>
-			<td th:text="${car.carName.value}"></td>
-		</tr>
-		<tr>
-			<th>ガソリンタンク容量</th>
-			<td th:text="${car.gasolineTankCapacity.value}"></td>
-		</tr>
-		<tr>
-			<th>燃料</th>
-			<td th:text="${car.gasolineType.value}"></td>
-		</tr>
-		<tr>
-			<th>メモ</th>
-			<td th:text="${car.memo.value}"></td>
-		</tr>
-		<tr>
-			<td><a href="modify.html" th:href="@{/car/modify/{carId}(carId=${car.carId.value})}">編集</a></td>
-		</tr>
-	</table>
-
-	<a href="list.html" th:href="@{/car/summary}">一覧へ</a>
-	<a href="index.html" th:href="@{/index}">トップページへ</a>
-
-	<footer th:include="template :: fragment_footer"></footer>
-</body>
+		<footer th:include="template :: fragment_footer"></footer>
+	</body>
 </html>
