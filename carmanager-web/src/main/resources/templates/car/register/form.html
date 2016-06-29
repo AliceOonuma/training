@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
-	<head th:include="template :: fragment_html_head(title='New Car')">
+	<head th:include="template :: fragment_html_head(title='ガソリン家計簿')">
 			<meta charset="UTF-8" />
 	</head>
 	<body>
-		<header th:include="template :: fragment_header(title='New Car')"></header>
+		<header th:include="template :: fragment_header(title='ガソリン家計簿')"></header>
 		<div class="mdl-grid">
 			<div class="mdl-cell mdl-cell--2-col"></div>
 			<div class="mdl-cell mdl-cell--8-col">
 				<div class="mdl-card__wide mdl-card mdl-shadow--2dp">
 					<div class="mdl-card__title">
-						<h2><i class="fa fa-pencil" aria-hidden="true"></i> Create Car</h2>
+						<h2><i class="fa fa-pencil" aria-hidden="true"></i> 自動車新規登録</h2>
 					</div>
 					<div>
 						<form th:action="@{/car/register}" th:object="${carRegister}" method="POST">
@@ -50,12 +50,15 @@
 								<span th:if="*{#fields.hasErrors('memo.value')}" th:errors="*{memo.value}" class="mdl-textfield__error" ></span>
 							</div>
 							<div class="mdl-card__actions">
-								<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Submit</button>
+								<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">登録</button>
 							</div>
 						</form>
 					</div>
-					<a href="list.html" th:href="@{/car/summary}">自動車一覧へ</a><br/>
-					<a href="index.html" th:href="@{/}">トップページへ</a><br/>
+					<form th:action="@{/car/summary}">
+						<div  class="mdl-card__actions">
+							<button  class="mdl-button mdl-js-button mdl-button--raised">戻る</button>
+						</div>
+					</form>
 				</div>
 			</div>
 			<div class="mdl-cell mdl-cell--2-col"></div>

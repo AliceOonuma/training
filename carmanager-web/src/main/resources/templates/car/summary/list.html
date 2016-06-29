@@ -1,26 +1,45 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
-<head th:include="template :: fragment_html_head(title='車一覧')">
-</head>
-<body>
-	<header th:include="template :: fragment_header(title='車一覧"></header>
-	<h2>車一覧</h2>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:include="template :: fragment_html_head(title='ガソリン家計簿')">
+			<meta charset="UTF-8" />
+	</head>
+	<body>
+		<header th:include="template :: fragment_header(title='ガソリン家計簿')"></header>
+		<div class="mdl-grid">
+			<div class="mdl-cell mdl-cell--2-col"></div>
+			<div class="mdl-cell mdl-cell--8-col">
+				<div class="mdl-card__wide mdl-card mdl-shadow--2dp">
+					<div class="mdl-card__title">
+						<h2><i class="fa fa-list" aria-hidden="true"></i> 自動車一覧</h2>
+					</div>
+					<ul class="mdl-list-icon mdl-list">
+						<li class="mdl-list__item" th:each="carList:${carSummaryList.list}" border-bottom="1px solid #bfbfbf">
+							<span class="mdl-list__item-primary-content">
+								<i class="fa fa-car fa-2x"></i><span th:text="${carList.carName.value}">Bryan Cranston</span>
+							</span>
+							<span>
+								<a th:href="@{/car/detail/{carId}(carId=${carList.carId.value})}" class="mdl-button mdl-js-button mdl-button--primary"><i class="fa fa-list-alt"></i>詳細</a>
+								<a th:href="@{/car/modify/{carId}(carId=${carList.carId.value})}" class="mdl-button mdl-js-button mdl-button--primary"><i class="fa fa-pencil"></i>編集</a>
+							</span>
+						</li>
+					</ul>
+					<div>
+						<form th:action="@{/car/register}">
+							<div  class="mdl-card__actions">
+								<button  class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"><i class="fa fa-plus"></i>　自動車を追加</button>
+							</div>
+						</form>
+						<form th:action="@{/logout}">
+							<div class="mdl-card__actions">
+								<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">ログアウト</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="mdl-cell mdl-cell--2-col"></div>
+		</div>
 
-	<table>
-		<tr>
-			<th>車名</th>
-		</tr>
-		<tr th:each="carList:${carSummaryList.list}">
-			<td th:text="${carList.carName.value}"></td>
-			<td><a href="detail.html" th:href="@{/car/detail/{carId}(carId=${carList.carId.value})}">詳細</a></td>
-			<td><a href="modify.html" th:href="@{/car/modify/{carId}(carId=${carList.carId.value})}">編集</a></td>
-		</tr>
-
-	</table>
-
-	<a href="index.html" th:href="@{/index}">戻る</a>
-
-	<footer th:include="template :: fragment_footer"></footer>
-</body>
+		<footer th:include="template :: fragment_footer"></footer>
+	</body>
 </html>

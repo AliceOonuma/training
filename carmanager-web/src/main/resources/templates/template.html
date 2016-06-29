@@ -31,6 +31,11 @@
 	    	}
 	        .mdl-textfield{
 	            display: block;
+	            width:100%;
+	        }
+	        .mdl-card__title{
+	        	background-color:#3f51b5;
+	        	color:white;
 	        }
 	        .mdl-card__wide{
 	        	width:100%;
@@ -43,9 +48,7 @@
 	        }
 	        .mdl-card__wide .mdl-card__actions button{
 	        	width:100%;
-	        }
-	        .mdl-card__wide .mdl-card__actions button{
-	        	margin-top:20px;
+	        	margin:0 auto;
 	        }
 	        .mdl-list{
 	        	margin:20px;
@@ -60,6 +63,9 @@
 	        	position:absolute;
 	        	right:20px;
 	        	top:20px;
+	        }
+	        #carDetail li{
+	        	border-bottom:1px solid #bfbfbf;
 	        }
 	    </style>
     <title th:text="${title}"></title>
